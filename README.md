@@ -6,7 +6,7 @@ codingcircle contains the examples from the YouTube Coding Cirle.
 
 So far, the following exercises have been covered:
 
-- [Trie](./trie/) – implementing an autocomplete feature using a trie.
+- [Trie](./trie/) – implementing an autocomplete feature using a trie
 
 ## Running quality assurance
 
