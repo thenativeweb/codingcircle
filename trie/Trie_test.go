@@ -1,6 +1,7 @@
 package trie_test
 
 import (
+	"os"
 	"sort"
 	"testing"
 
@@ -8,52 +9,54 @@ import (
 	"github.com/thenativeweb/codingcircle/trie"
 )
 
-func TestTrie(t *testing.T) {
-	words := trie.New()
+func TestMain(m *testing.M) {
+	setup()
+	code := m.Run()
+	os.Exit(code)
+}
 
+var words = trie.New()
+
+func setup() {
 	words.Add("the")
 	words.Add("native")
 	words.Add("web")
 	words.Add("website")
+}
 
-	tests := []struct {
-		name   string
-		prefix string
-		want   []string
-	}{
-		{
-			name:   "prefix exists",
-			prefix: "t",
-			want:   []string{"the"},
-		},
-		{
-			name:   "prefix exists with multiple words",
-			prefix: "w",
-			want:   []string{"web", "website"},
-		},
-		{
-			name:   "prefix does not exist",
-			prefix: "x",
-			want:   []string{},
-		},
-		{
-			name:   "prefix is a word",
-			prefix: "native",
-			want:   []string{"native"},
-		},
-		{
-			name:   "prefix is empty",
-			prefix: "",
-			want:   []string{"native", "the", "web", "website"},
-		},
-	}
+func TestTrie(t *testing.T) {
+	t.Run("prefix exists", func(t *testing.T) {
+		result := words.Search("t")
+		sort.Strings(result)
 
-	for _, test := range tests {
-		t.Run(test.name, func(t *testing.T) {
-			result := words.Search(test.prefix)
-			sort.Strings(result)
+		assert.Equal(t, []string{"the"}, result)
+	})
 
-			assert.Equal(t, test.want, result)
-		})
-	}
+	t.Run("prefix exists with multiple words", func(t *testing.T) {
+		result := words.Search("w")
+		sort.Strings(result)
+
+		assert.Equal(t, []string{"web", "website"}, result)
+	})
+
+	t.Run("prefix does not exist", func(t *testing.T) {
+		result := words.Search("x")
+		sort.Strings(result)
+
+		assert.Equal(t, []string{}, result)
+	})
+
+	t.Run("prefix is a word", func(t *testing.T) {
+		result := words.Search("native")
+		sort.Strings(result)
+
+		assert.Equal(t, []string{"native"}, result)
+	})
+
+	t.Run("prefix is empty", func(t *testing.T) {
+		result := words.Search("")
+		sort.Strings(result)
+
+		assert.Equal(t, []string{"native", "the", "web", "website"}, result)
+	})
 }
