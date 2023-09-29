@@ -44,7 +44,7 @@ func TestTrie(t *testing.T) {
 		{
 			name:   "prefix is empty",
 			prefix: "",
-			want:   []string{"the", "native", "web", "website"},
+			want:   []string{"native", "the", "web", "website"},
 		},
 	}
 
