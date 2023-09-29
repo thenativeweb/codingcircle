@@ -1,6 +1,7 @@
 package trie_test
 
 import (
+	"sort"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -16,41 +17,43 @@ func TestTrie(t *testing.T) {
 	words.Add("website")
 
 	tests := []struct {
-		name     string
-		prefix   string
-		expected []string
+		name   string
+		prefix string
+		want   []string
 	}{
 		{
-			name:     "prefix exists",
-			prefix:   "t",
-			expected: []string{"the"},
+			name:   "prefix exists",
+			prefix: "t",
+			want:   []string{"the"},
 		},
 		{
-			name:     "prefix exists with multiple words",
-			prefix:   "w",
-			expected: []string{"web", "website"},
+			name:   "prefix exists with multiple words",
+			prefix: "w",
+			want:   []string{"web", "website"},
 		},
 		{
-			name:     "prefix does not exist",
-			prefix:   "x",
-			expected: []string{},
+			name:   "prefix does not exist",
+			prefix: "x",
+			want:   []string{},
 		},
 		{
-			name:     "prefix is a word",
-			prefix:   "native",
-			expected: []string{"native"},
+			name:   "prefix is a word",
+			prefix: "native",
+			want:   []string{"native"},
 		},
 		{
-			name:     "prefix is empty",
-			prefix:   "",
-			expected: []string{"the", "native", "web", "website"},
+			name:   "prefix is empty",
+			prefix: "",
+			want:   []string{"the", "native", "web", "website"},
 		},
 	}
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			actual := words.Search(test.prefix)
-			assert.Equal(t, test.expected, actual)
+			result := words.Search(test.prefix)
+			sort.Strings(result)
+
+			assert.Equal(t, test.want, result)
 		})
 	}
 }
