@@ -1,7 +1,6 @@
 package trie_test
 
 import (
-	"os"
 	"sort"
 	"testing"
 
@@ -9,23 +8,21 @@ import (
 	"github.com/thenativeweb/codingcircle/trie"
 )
 
-func TestMain(m *testing.M) {
-	setup()
-	code := m.Run()
-	os.Exit(code)
-}
+func getTrie() *trie.Trie {
+	var t = trie.New()
 
-var words = trie.New()
+	t.Add("the")
+	t.Add("native")
+	t.Add("web")
+	t.Add("website")
 
-func setup() {
-	words.Add("the")
-	words.Add("native")
-	words.Add("web")
-	words.Add("website")
+	return t
 }
 
 func TestTrie(t *testing.T) {
 	t.Run("prefix exists", func(t *testing.T) {
+		words := getTrie()
+
 		result := words.Search("t")
 		sort.Strings(result)
 
@@ -33,6 +30,8 @@ func TestTrie(t *testing.T) {
 	})
 
 	t.Run("prefix exists with multiple words", func(t *testing.T) {
+		words := getTrie()
+
 		result := words.Search("w")
 		sort.Strings(result)
 
@@ -40,6 +39,8 @@ func TestTrie(t *testing.T) {
 	})
 
 	t.Run("prefix does not exist", func(t *testing.T) {
+		words := getTrie()
+
 		result := words.Search("x")
 		sort.Strings(result)
 
@@ -47,6 +48,8 @@ func TestTrie(t *testing.T) {
 	})
 
 	t.Run("prefix is a word", func(t *testing.T) {
+		words := getTrie()
+
 		result := words.Search("native")
 		sort.Strings(result)
 
@@ -54,6 +57,8 @@ func TestTrie(t *testing.T) {
 	})
 
 	t.Run("prefix is empty", func(t *testing.T) {
+		words := getTrie()
+
 		result := words.Search("")
 		sort.Strings(result)
 
