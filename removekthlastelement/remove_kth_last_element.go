@@ -1,4 +1,4 @@
-package playlist
+package removekthlastelement
 
 func RemoveKthLastElement(head *Node, k int) *Node {
 	lead := head

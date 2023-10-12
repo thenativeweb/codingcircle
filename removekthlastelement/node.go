@@ -1,4 +1,4 @@
-package playlist
+package removekthlastelement
 
 type Node struct {
 	Value int

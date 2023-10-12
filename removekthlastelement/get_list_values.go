@@ -1,4 +1,4 @@
-package playlist
+package removekthlastelement
 
 func GetListValues(head *Node) []int {
 	node := head
