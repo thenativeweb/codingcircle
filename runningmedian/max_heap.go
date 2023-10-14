@@ -26,10 +26,8 @@ func (h *MaxHeap) Push(value any) {
 
 func (h *MaxHeap) Pop() any {
 	oldHeap := *h
-
-	n := len(oldHeap)
-	value := oldHeap[n-1]
-	*h = oldHeap[0 : n-1]
-
+	valueIndex := len(oldHeap) - 1
+	value := oldHeap[valueIndex]
+	*h = oldHeap[:valueIndex]
 	return value
 }
