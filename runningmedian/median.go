@@ -1,24 +1,55 @@
 package runningmedian
 
-import "sort"
+import (
+	"container/heap"
+)
 
-func GetMedians(sequence []int) []float64 {
-	medians := make([]float64, len(sequence))
+func getMedian(minHeap *MinHeap, maxHeap *MaxHeap) float64 {
+	if minHeap.Len() > maxHeap.Len() {
+		return float64((*minHeap)[0])
+	}
+	if minHeap.Len() < maxHeap.Len() {
+		return float64((*maxHeap)[0])
+	}
+	return (float64((*minHeap)[0]) + float64((*maxHeap)[0])) / 2.0
+}
 
-	tempSequence := []int{}
-	for i, element := range sequence {
-		tempSequence = append(tempSequence, element)
-		sort.Ints(tempSequence)
+func add(value int, minHeap *MinHeap, maxHeap *MaxHeap) {
+	if minHeap.Len()+maxHeap.Len() < 1 {
+		heap.Push(minHeap, value)
+		return
+	}
 
-		var median float64
-		n := len(tempSequence)
-		if n%2 == 1 {
-			median = float64(tempSequence[n/2])
-		} else {
-			median = float64(tempSequence[n/2-1]+tempSequence[n/2]) / 2
-		}
+	median := getMedian(minHeap, maxHeap)
+	if float64(value) > median {
+		heap.Push(minHeap, value)
+	} else {
+		heap.Push(maxHeap, value)
+	}
+}
 
-		medians[i] = median
+func rebalance(minHeap *MinHeap, maxHeap *MaxHeap) {
+	if minHeap.Len() > maxHeap.Len()+1 {
+		root := heap.Pop(minHeap).(int)
+		heap.Push(maxHeap, root)
+	} else if maxHeap.Len() > minHeap.Len()+1 {
+		root := heap.Pop(maxHeap).(int)
+		heap.Push(minHeap, root)
+	}
+}
+
+func GetMedians(values []int) []float64 {
+	minHeap := NewMinHeap()
+	maxHeap := NewMaxHeap()
+
+	medians := []float64{}
+
+	for _, value := range values {
+		add(value, minHeap, maxHeap)
+		rebalance(minHeap, maxHeap)
+
+		median := getMedian(minHeap, maxHeap)
+		medians = append(medians, median)
 	}
 
 	return medians
