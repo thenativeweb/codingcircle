@@ -1,4 +1,4 @@
-package trie
+package autocomplete
 
 type Node struct {
 	children    map[rune]*Node

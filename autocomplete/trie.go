@@ -1,10 +1,10 @@
-package trie
+package autocomplete
 
 type Trie struct {
 	root *Node
 }
 
-func New() *Trie {
+func NewTrie() *Trie {
 	return &Trie{
 		root: NewNode(),
 	}

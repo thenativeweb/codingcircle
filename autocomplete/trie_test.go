@@ -1,15 +1,15 @@
-package trie_test
+package autocomplete_test
 
 import (
 	"sort"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
-	"github.com/thenativeweb/codingcircle/trie"
+	"github.com/thenativeweb/codingcircle/autocomplete"
 )
 
-func getTrie() *trie.Trie {
-	var t = trie.New()
+func getTrie() *autocomplete.Trie {
+	var t = autocomplete.NewTrie()
 
 	t.Add("the")
 	t.Add("native")
