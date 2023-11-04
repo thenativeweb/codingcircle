@@ -11,6 +11,7 @@ So far, the following exercises have been covered:
 - [Heap](./heap/) – implements a heap from scratch, without using the built-in `container/heap` package
 - [Remove k-th last element](./removekthlastelement/) – removes the k-th last element from a single-linked list
 - [Running median](./runningmedian/) – calculates the running median of a sequence of numbers
+- [Tic tac toe](./tictactoe/) – detects winnning states in a tic tac toe game
 
 ## Running quality assurance
 
