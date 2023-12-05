@@ -14,7 +14,7 @@ func TestCar(t *testing.T) {
 }
 
 func TestCdr(t *testing.T) {
-	car := cons.Cdr(cons.Cons(23, 42))
+	cdr := cons.Cdr(cons.Cons(23, 42))
 
-	assert.Equal(t, 42, car)
+	assert.Equal(t, 42, cdr)
 }
