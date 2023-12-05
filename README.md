@@ -7,7 +7,7 @@ codingcircle contains the examples from the YouTube Coding Cirle.
 So far, the following exercises have been covered:
 
 - [Autocomplete](./autocomplete/) – implements an autocomplete feature using a trie
-- [Cons, Car, Cdr & Co.](./cons) – implements a cons cell and the corresponding functions
+- [Cons, Car, Cdr & co.](./cons) – implements a cons cell and the corresponding functions
 - [Continous maximum](./continuousmax/) – calculates the maximum of a sliding window
 - [Floyd](./floyd/) – implements Floyd's cycle-finding "Tortoise and Hare" algorithm
 - [Heap](./heap/) – implements a heap from scratch, without using the built-in `container/heap` package
