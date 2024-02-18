@@ -13,6 +13,7 @@ So far, the following exercises have been covered:
 - [Heap](./heap/) – implements a heap from scratch, without using the built-in `container/heap` package
 - [Radix sort](./radixsort/) – implements radix sort
 - [Remove k-th last element](./removekthlastelement/) – removes the k-th last element from a single-linked list
+- [Run-length encoding](./runlengthencoding/) – encodes and decodes strings using run-length encoding
 - [Running median](./runningmedian/) – calculates the running median of a sequence of numbers
 - [Tic tac toe](./tictactoe/) – detects winnning states in a tic tac toe game
 
