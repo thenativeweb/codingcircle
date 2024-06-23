@@ -8,6 +8,7 @@ So far, the following exercises have been covered:
 
 - [Autocomplete](./autocomplete/) – implements an autocomplete feature using a trie
 - [Busfactor](./busfactor/) – calculates the the maximum load of a bus based on events
+- [Clever max](./clevermax/) – calculates the maximum of two numbers
 - [Cons, Car, Cdr & co.](./cons) – implements a cons cell and the corresponding functions
 - [Continous maximum](./continuousmax/) – calculates the maximum of a sliding window
 - [Floyd](./floyd/) – implements Floyd's cycle-finding "Tortoise and Hare" algorithm
