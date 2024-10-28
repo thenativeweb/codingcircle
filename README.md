@@ -11,6 +11,7 @@ So far, the following exercises have been covered:
 - [Clever max](./clevermax/) – calculates the maximum of two numbers
 - [Cons, Car, Cdr & co.](./cons) – implements a cons cell and the corresponding functions
 - [Continous maximum](./continuousmax/) – calculates the maximum of a sliding window
+- [Egyptian fractions](./egyptianfractions/) – calculates the "Egyptian Fractions" version of a given fraction
 - [Floyd](./floyd/) – implements Floyd's cycle-finding "Tortoise and Hare" algorithm
 - [Heap](./heap/) – implements a heap from scratch, without using the built-in `container/heap` package
 - [Markov count](./markovcount/) – figures out how often states are reached by a Markov chain
