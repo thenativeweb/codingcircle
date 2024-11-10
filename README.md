@@ -7,6 +7,7 @@ codingcircle contains the examples from the YouTube Coding Cirle.
 So far, the following exercises have been covered:
 
 - [Autocomplete](./autocomplete/) – implements an autocomplete feature using a trie
+- [Bloom filter](./bloomfilter/) – implements a bloom filter
 - [Busfactor](./busfactor/) – calculates the the maximum load of a bus based on events
 - [Clever max](./clevermax/) – calculates the maximum of two numbers
 - [Cons, Car, Cdr & co.](./cons) – implements a cons cell and the corresponding functions
