@@ -16,7 +16,7 @@ So far, the following exercises have been covered:
 - [Floyd](./floyd/) – implements Floyd's cycle-finding "Tortoise and Hare" algorithm
 - [Heap](./heap/) – implements a heap from scratch, without using the built-in `container/heap` package
 - [Markov count](./markovcount/) – figures out how often states are reached by a Markov chain
-- [Parentheses](./parentheses/) – checks if a string has balanced parentheses.
+- [Parentheses](./parentheses/) – checks if a string has balanced parentheses
 - [Radix sort](./radixsort/) – implements radix sort
 - [Remove k-th last element](./removekthlastelement/) – removes the k-th last element from a single-linked list
 - [Run-length encoding](./runlengthencoding/) – encodes and decodes strings using run-length encoding
