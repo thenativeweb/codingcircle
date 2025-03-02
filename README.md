@@ -13,6 +13,7 @@ So far, the following exercises have been covered:
 - [Cons, Car, Cdr & co.](./cons) – implements a cons cell and the corresponding functions
 - [Continous maximum](./continuousmax/) – calculates the maximum of a sliding window
 - [Egyptian fractions](./egyptianfractions/) – calculates the "Egyptian Fractions" version of a given fraction
+- [Fair coin toss](./faircointoss/) – simulates a fair coin toss based on an unfair random function
 - [Fibonacci](./fibonacci/) – calculates the n-th Fibonacci number
 - [Floyd](./floyd/) – implements Floyd's cycle-finding "Tortoise and Hare" algorithm
 - [Heap](./heap/) – implements a heap from scratch, without using the built-in `container/heap` package
