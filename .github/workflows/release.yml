@@ -16,7 +16,7 @@ jobs:
       with:
         fetch-depth: '0'
     - name: Use Go
-      uses: actions/setup-go@v6
+      uses: actions/setup-go@v6.5.0
       with:
         go-version-file: ./go.mod
     - name: Run QA
